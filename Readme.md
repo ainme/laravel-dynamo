@@ -1,4 +1,9 @@
 # Laravel Dynamo
+
+![Built for Laravel 5](https://img.shields.io/badge/Built_for-Laravel-red.svg?style=flat-square)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ainme/laravel-dynamo/blob/master/LICENSE)
+
+
 The package generates migration files for the application using raw mysql file. 
 I use this package to create migration files for the applications after designing and exporting my ERDs to raw mysql from mysql workbench. I have just used this on Laravel 5 and hopefully so far it works.
 
