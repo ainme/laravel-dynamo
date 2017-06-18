@@ -1,9 +1,11 @@
 <?php
 namespace Aimme\Dynamo;
 
-use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 use Aimme\Dynamo\Console\GenerateMigrations;
+use Aimme\Dynamo\LaravelMakeMigrations;
+use Generator\Contracts\MakeableInterface;
 use Generator\Generator;
+use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
 class DynamoServiceProvider extends IlluminateServiceProvider
 {
@@ -21,6 +23,8 @@ class DynamoServiceProvider extends IlluminateServiceProvider
         $this->app->bind('dynamo.config', function(){
             return $this->app['config']->get('dynamo');
         });
+
+        $this->app->bind(MakeableInterface::class, LaravelMakeMigrations::class);
 
         $this->app->bind('dynamo', function() {
             $configs = $this->app->make('dynamo.config');
