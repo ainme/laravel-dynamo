@@ -61,6 +61,15 @@ class GenerateMigrations extends BaseCommand
     }
 
     /**
+     * for laravel 5.7+
+     * @return void
+     */
+    public function handle()
+    {
+        return $this->fire();
+    }
+
+    /**
      * Write the migrations to disk.
      *
      * @param  string  $path
@@ -69,11 +78,11 @@ class GenerateMigrations extends BaseCommand
     protected function generateMigrations($sqlPath = null)
     {
         if ($sqlPath) {
-            Config::set('dynamo.migrations.source.raw', $sqlPath);      
+            Config::set('dynamo.migrations.source.raw', $sqlPath);
         }
 
         if ($this->getMigrationPath()) {
-            Config::set('dynamo.migrations.make.output_path', $this->getMigrationPath());      
+            Config::set('dynamo.migrations.make.output_path', $this->getMigrationPath());
         }
 
         $this->app['dynamo']->generateMigrations();
