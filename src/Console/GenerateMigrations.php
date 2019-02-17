@@ -98,7 +98,7 @@ class GenerateMigrations extends BaseCommand
     protected function getMigrationPath()
     {
         if (! is_null($targetPath = $this->input->getOption('path'))) {
-            return $this->laravel->basePath().'/'.$targetPath;
+            return $targetPath;
         }
 
         return parent::getMigrationPath();
