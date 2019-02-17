@@ -1,9 +1,11 @@
 <?php
 namespace Aimme\Dynamo;
 
-use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 use Aimme\Dynamo\Console\GenerateMigrations;
+use Aimme\Dynamo\LaravelMakeMigrations;
+use Generator\Contracts\MakeableInterface;
 use Generator\Generator;
+use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
 class DynamoServiceProvider extends IlluminateServiceProvider
 {
@@ -22,6 +24,8 @@ class DynamoServiceProvider extends IlluminateServiceProvider
             return $this->app['config']->get('dynamo');
         });
 
+        $this->app->bind(MakeableInterface::class, LaravelMakeMigrations::class);
+
         $this->app->bind('dynamo', function() {
             $configs = $this->app->make('dynamo.config');
             $generator = new Generator($configs);
@@ -33,7 +37,7 @@ class DynamoServiceProvider extends IlluminateServiceProvider
 
     protected function isLumen()
     {
-        return str_contains($this->app->version(), 'Lumen') === true;
+        return (strpos($this->app->version(), 'Lumen') !== false);
     }
 
     public function boot()
