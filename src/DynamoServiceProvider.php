@@ -37,7 +37,7 @@ class DynamoServiceProvider extends IlluminateServiceProvider
 
     protected function isLumen()
     {
-        return str_contains($this->app->version(), 'Lumen') === true;
+        return (strpos($this->app->version(), 'Lumen') !== false);
     }
 
     public function boot()
