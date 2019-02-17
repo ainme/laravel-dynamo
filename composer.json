@@ -13,11 +13,17 @@
         "aimme/dynamo": "3.0.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~7.0"
+        "phpunit/phpunit": "~7.0",
+        "orchestra/testbench": "~3.0"
     },
     "autoload": {
         "psr-4": {
             "Aimme\\Dynamo\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Aimme\\Dynamo\\Tests\\": "tests/"
         }
     }
 }
