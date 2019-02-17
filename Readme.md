@@ -1,5 +1,6 @@
 # Laravel Dynamo
 
+![](https://travis-ci.org/mohamed-aiman/laravel-dynamo.svg?branch=master)
 ![Built for Laravel 5](https://img.shields.io/badge/Built_for-Laravel-red.svg?style=flat-square)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/ainme/laravel-dynamo/blob/master/LICENSE)
 
