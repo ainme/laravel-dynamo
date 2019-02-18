@@ -15,11 +15,6 @@ Require this package in your `composer.json` and update composer
 ```php
 "aimme/laravel-dynamo": "1.0.0"
 ```
-After updating composer, add the ServiceProvider to the providers array in `config/app.php`
-
-```php
-Aimme\Dynamo\DynamoServiceProvider::class,
-```	
 
 To publish the config settings in Laravel 5 use:
 

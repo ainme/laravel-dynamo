@@ -25,5 +25,12 @@
         "psr-4": {
             "Aimme\\Dynamo\\Tests\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Aimme\\Dynamo\\DynamoServiceProvider"
+            ]
+        }
     }
 }
